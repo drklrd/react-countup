@@ -1,7 +1,8 @@
 // @flow
 
-import React from 'react';
 import Count from 'countup.js';
+import PropTypes from 'prop-types';
+import React from 'react';
 import type { Component } from 'react';
 
 type Props = {
@@ -121,6 +122,26 @@ export default class CountUp extends React.Component<*, *, *> {
     style: undefined,
     useEasing: true,
     useGrouping: false,
+  };
+
+  static PropTypes = {
+    className: PropTypes.string,
+    decimal: PropTypes.string,
+    decimals: PropTypes.number,
+    duration: PropTypes.number.isRequired,
+    easingFn: PropTypes.func,
+    end: PropTypes.number.isRequired,
+    formattingFn: PropTypes.func,
+    onComplete: PropTypes.func,
+    onStart: PropTypes.func,
+    prefix: PropTypes.string,
+    separator: PropTypes.string,
+    start: PropTypes.number,
+    suffix: PropTypes.string,
+    redraw: PropTypes.bool,
+    style: PropTypes.object,
+    useEasing: PropTypes.bool,
+    useGrouping: PropTypes.bool,
   };
 
   componentDidMount() {
