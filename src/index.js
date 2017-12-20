@@ -21,6 +21,7 @@ type Props = {
   style: {},
   suffix: string,
   useEasing: boolean,
+  mapping : {}
 };
 
 type FormatNumberFn = (
@@ -75,6 +76,7 @@ export const startAnimation = (component: Component<*, *>) => {
     start,
     suffix,
     useEasing,
+    mapping
   }: Props = component.props;
 
   const countupInstance = new Count(
@@ -93,6 +95,7 @@ export const startAnimation = (component: Component<*, *>) => {
       useEasing,
       useGrouping: !!separator,
     },
+    mapping
   );
 
   if (typeof onStart === 'function') {
@@ -159,6 +162,7 @@ export default class CountUp extends React.Component<*, *> {
       prefix,
       suffix,
       style,
+      mapping
     } = this.props;
 
     return (
