@@ -30,7 +30,7 @@
     "build": "babel src -d build --ignore __tests__",
     "flow": "flow check",
     "lint": "eslint src",
-    // "precommit": "lint-staged",
+    "precommit": "lint-staged",
     "prepare": "yarn run build",
     "prettier": "prettier --write src/**/*.js",
     "test": "jest"
