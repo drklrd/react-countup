@@ -3,7 +3,7 @@
 import React from 'react';
 import Count from 'countup.js';
 import type { Component } from 'react';
-import DialectMappings from './dialectMappings.json';
+import DialectMappings from '../src/dialectMappings.json';
 
 type Props = {
   className: string,
