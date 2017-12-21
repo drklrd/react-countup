@@ -3,6 +3,7 @@
 import React from 'react';
 import Count from 'countup.js';
 import type { Component } from 'react';
+import DialectMappings from './dialectMappings.json';
 
 type Props = {
   className: string,
@@ -21,8 +22,9 @@ type Props = {
   style: {},
   suffix: string,
   useEasing: boolean,
+  DialectMappings : {},
   mapping : {},
-  devanagari : boolean
+  dialect : boolean
 };
 
 type FormatNumberFn = (
@@ -77,8 +79,9 @@ export const startAnimation = (component: Component<*, *>) => {
     start,
     suffix,
     useEasing,
+    DialectMappings,
     mapping,
-    devanagari
+    dialect
   }: Props = component.props;
 
   const countupInstance = new Count(
@@ -97,8 +100,9 @@ export const startAnimation = (component: Component<*, *>) => {
       useEasing,
       useGrouping: !!separator,
     },
+    DialectMappings,
     mapping,
-    devanagari
+    dialect
   );
 
   if (typeof onStart === 'function') {
@@ -165,8 +169,9 @@ export default class CountUp extends React.Component<*, *> {
       prefix,
       suffix,
       style,
+      DialectMappings,
       mapping,
-      devanagari
+      dialect
     } = this.props;
 
     return (

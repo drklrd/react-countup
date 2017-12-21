@@ -15,6 +15,10 @@ var _countup = require('countup.js');
 
 var _countup2 = _interopRequireDefault(_countup);
 
+var _dialectMappings = require('./dialectMappings.json');
+
+var _dialectMappings2 = _interopRequireDefault(_dialectMappings);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61,8 +65,9 @@ var startAnimation = exports.startAnimation = function startAnimation(component)
       start = _component$props.start,
       suffix = _component$props.suffix,
       useEasing = _component$props.useEasing,
+      DialectMappings = _component$props.DialectMappings,
       mapping = _component$props.mapping,
-      devanagari = _component$props.devanagari;
+      dialect = _component$props.dialect;
 
 
   var countupInstance = new _countup2.default(component.spanElement, start, end, decimals, duration, {
@@ -74,7 +79,7 @@ var startAnimation = exports.startAnimation = function startAnimation(component)
     suffix: suffix,
     useEasing: useEasing,
     useGrouping: !!separator
-  }, mapping, devanagari);
+  }, DialectMappings, mapping, dialect);
 
   if (typeof onStart === 'function') {
     onStart();
@@ -131,8 +136,9 @@ var CountUp = function (_React$Component) {
           prefix = _props.prefix,
           suffix = _props.suffix,
           style = _props.style,
+          DialectMappings = _props.DialectMappings,
           mapping = _props.mapping,
-          devanagari = _props.devanagari;
+          dialect = _props.dialect;
 
 
       return _react2.default.createElement(
