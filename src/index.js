@@ -22,7 +22,6 @@ type Props = {
   style: {},
   suffix: string,
   useEasing: boolean,
-  DialectMappings : {},
   mapping : {},
   dialect : boolean
 };
@@ -79,7 +78,6 @@ export const startAnimation = (component: Component<*, *>) => {
     start,
     suffix,
     useEasing,
-    DialectMappings,
     mapping,
     dialect
   }: Props = component.props;
@@ -100,9 +98,8 @@ export const startAnimation = (component: Component<*, *>) => {
       useEasing,
       useGrouping: !!separator,
     },
-    DialectMappings,
-    mapping,
-    dialect
+    DialectMappings[dialect] || undefined,
+    mapping
   );
 
   if (typeof onStart === 'function') {
@@ -169,7 +166,6 @@ export default class CountUp extends React.Component<*, *> {
       prefix,
       suffix,
       style,
-      DialectMappings,
       mapping,
       dialect
     } = this.props;

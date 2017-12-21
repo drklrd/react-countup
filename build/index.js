@@ -65,7 +65,6 @@ var startAnimation = exports.startAnimation = function startAnimation(component)
       start = _component$props.start,
       suffix = _component$props.suffix,
       useEasing = _component$props.useEasing,
-      DialectMappings = _component$props.DialectMappings,
       mapping = _component$props.mapping,
       dialect = _component$props.dialect;
 
@@ -79,7 +78,7 @@ var startAnimation = exports.startAnimation = function startAnimation(component)
     suffix: suffix,
     useEasing: useEasing,
     useGrouping: !!separator
-  }, DialectMappings, mapping, dialect);
+  }, _dialectMappings2.default[dialect] || undefined, mapping);
 
   if (typeof onStart === 'function') {
     onStart();
@@ -136,7 +135,6 @@ var CountUp = function (_React$Component) {
           prefix = _props.prefix,
           suffix = _props.suffix,
           style = _props.style,
-          DialectMappings = _props.DialectMappings,
           mapping = _props.mapping,
           dialect = _props.dialect;
 
