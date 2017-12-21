@@ -15,7 +15,7 @@ var _countup = require('countup.js');
 
 var _countup2 = _interopRequireDefault(_countup);
 
-var _dialectMappings = require('./dialectMappings.json');
+var _dialectMappings = require('../src/dialectMappings.json');
 
 var _dialectMappings2 = _interopRequireDefault(_dialectMappings);
 
